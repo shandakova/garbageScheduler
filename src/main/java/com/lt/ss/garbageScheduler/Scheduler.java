@@ -3,16 +3,17 @@ package com.lt.ss.garbageScheduler;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.scheduling.annotation.EnableScheduling;
+
 import org.springframework.scheduling.annotation.Scheduled;
 
 import java.util.Date;
 
+import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestClientException;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.http.ResponseEntity;
 
-@EnableScheduling
+@Component
 public class Scheduler {
     private String url="http://localhost:8080/oldTestCase/delete";
     private Logger logger =  LoggerFactory.getLogger(Scheduler.class);
