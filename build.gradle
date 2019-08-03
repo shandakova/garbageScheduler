@@ -3,37 +3,25 @@ buildscript {
 		mavenCentral()
 	}
 }
-
-
-
 plugins {
 	id 'org.springframework.boot' version '2.1.6.RELEASE'
 	id 'java'
 	id 'war'
 }
-war {
-	baseName = 'spring-boot-garbageScheduler'
-	version = '0.0.1-SNAPSHOT'
-}
 repositories {
 	mavenCentral()
 }
+war {
+	enabled = true
+}
 apply plugin: 'io.spring.dependency-management'
 apply plugin: 'idea'
-apply plugin: 'java'
-
-
 
 group = 'com.lt.ss'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '1.8'
 
-repositories {
-	mavenCentral()
-}
-
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
-	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
